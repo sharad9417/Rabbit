@@ -1,0 +1,29 @@
+package popup;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class contactuspage {
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.get("https://ditaxpresso.com/#/contactus");
+		
+		driver.findElement(By.name("First Name")).sendKeys("sharad");
+		driver.findElement(By.name("Last Name")).sendKeys("shinde");
+		driver.findElement(By.name("Phone")).sendKeys("7774957058");
+		driver.findElement(By.name("Email")).sendKeys("sharadshinde1997@gmail.com");
+		driver.findElement(By.name("Title")).sendKeys("work properly");
+		
+		driver.findElement(By.name("Description")).sendKeys("frgtgdstegs");
+		driver.findElement(By.id("formsubmit")).click();
+	}
+
+	
+
+}
